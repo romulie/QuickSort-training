@@ -5,7 +5,8 @@
 #define QUICKSORT_H_INCLUDED
 
 #include<iostream>
+#include<vector>
 
-void quickSort(int arr[], int start, int ends);
+void quickSort(std::vector<int> &arr, int start, int ends);
 
 #endif // QUICKSORT_H_INCLUDED

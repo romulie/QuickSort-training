@@ -2,11 +2,6 @@
 
 #include "quickSort.h"
 
-void show(int arr[], int n){
-    for (size_t i = 0; i < n; ++i) std::cout<<arr[i]<<" ";
-    std::cout<<std::endl;
-}
-
 template <typename T> void show1(const T  &v){
     for (auto const i:v) std::cout<<i<<" "; std::cout<<std::endl;
 }
@@ -18,19 +13,21 @@ std::cout<<"Please enter the SIZE of the array and press Enter:";
     int n;
     std::cin >> n;
     if (n < 0) n *= -1;
-    int* arr = new int[n];
+    std::vector<int> arr;
+    arr.reserve(n);
 std::cout<<"Please enter each element of the array and press Enter."<<std::endl;
     for (size_t i = 0; i < n; ++i){
 std::cout<< i <<"-th element is: ";
-        std::cin >> arr[i];
+        int num;
+        std::cin >> num;
+        arr.push_back(num);
     }
 
 std::cout<<"Input array: "<<std::endl;
-show(arr, n);
+show1(arr);
     quickSort(arr, 0, n-1);
 std::cout<<"Sorted array: "<<std::endl;
-show(arr, n);
-    delete[] arr;
+show1(arr);
     system("pause");
     return 0;
 }

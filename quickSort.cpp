@@ -1,10 +1,10 @@
 #include "quickSort.h"
 
-int partition_QS(int arr[], int start, int ends);
+int partition_QS(std::vector<int> &arr, int start, int ends);
 
 
 
-void quickSort(int arr[], int start, int ends){
+void quickSort(std::vector<int> &arr, int start, int ends){
     if (start >= ends) return;              // base case
     int p = partition_QS(arr, start, ends); // find the pivot element
     quickSort(arr, start, p-1);             // sorting left part
@@ -12,7 +12,7 @@ void quickSort(int arr[], int start, int ends){
 }
 
 
-int partition_QS(int arr[], int start, int ends){
+int partition_QS(std::vector<int> &arr, int start, int ends){
 
     int pivot = arr[start];
     int cnt = 0;
